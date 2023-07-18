@@ -1,0 +1,22 @@
+.start h1 {
+    font-size: 3.5rem;
+
+}
+
+.start p {
+    margin-bottom: 2em;
+    color: #ff9b08
+}
+
+.start button {
+    padding: 10px 20px;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    outline: none; 
+   
+}
+
+.start button:hover{
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
