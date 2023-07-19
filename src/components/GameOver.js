@@ -1,9 +1,10 @@
 import '../styles/GameOver.css'
 
-export function GameOver(){
+export function GameOver({retry}){
     return(
         <div>
-            GameOver
+             <h1>GameOver</h1>
+            <button onClick={retry}>Reiniciar</button>
         </div>
     )
 }

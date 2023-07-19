@@ -1,9 +1,10 @@
 import '../styles/Game.css'
 
-export function Game(){
+export function Game({verifyLetter}){
     return(
         <div>
-            Game
+            <h1>Game</h1>
+            <button onClick={verifyLetter}>Finalizar</button>
         </div>
     )
 }
