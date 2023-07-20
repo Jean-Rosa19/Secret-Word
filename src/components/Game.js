@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react'
 import '../styles/Game.css'
 
 export function Game({ verifyLetter,
@@ -9,6 +10,23 @@ export function Game({ verifyLetter,
     guesses,
     score
 }) {
+
+    const [letter, setLetter] = useState('')
+    const letterInputRef = useRef(null)
+
+
+    function handleSubmit(e){
+        e.preventDefault();
+
+        verifyLetter(letter);
+
+        setLetter('');
+
+        letterInputRef.current.focus();
+    }
+
+
+
     return (
         <div className='game'>
             <p className='points'>
@@ -20,7 +38,7 @@ export function Game({ verifyLetter,
             </h3>
             <p>Você ainda tem {guesses} tentativa(s)</p>
             <div className='wordContainer'>
-                {letters.map((letter, index) => 
+                {letters.map((letter, index) =>
                     guessedLetters.includes(letter) ? (
                         <span key={index} className="letter">{letter}</span>
                     ) : (
@@ -31,17 +49,24 @@ export function Game({ verifyLetter,
 
             <div className='letterContainer'>
                 <p>Tente Advinhar uma letra:</p>
-                <form>
-                    <input type='text' name='letter' maxLength='1' required />
+                <form onSubmit={handleSubmit}>
+                    <input type='text'
+                        name='letter'
+                        maxLength='1'
+                        required
+                        onChange={(e) => setLetter(e.target.value)}
+                        value={letter} //para deixar o input dinamico
+                        ref={letterInputRef}
+                    />
                     <button>Jogar!</button>
                 </form>
             </div>
 
             <div className='wrongLattersContainer'>
                 <p>Letras Já Utilizadas</p>
-                        {wrongLetters.map((letter, index)=>(
-                            <span key={index}>{letter}, </span>
-                        ))}
+                {wrongLetters.map((letter, index) => (
+                    <span key={index}>{letter}, </span>
+                ))}
 
             </div>
 

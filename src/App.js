@@ -66,8 +66,8 @@ function App() {
 
   //process the letter input 
 
-  function verifyLetter() {
-    setGameStage(stages[2].name)
+  function verifyLetter(letter) {
+    console.log(letter);
   }
 
   // retry the game
