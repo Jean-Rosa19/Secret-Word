@@ -14,7 +14,7 @@
 }
 
 .letter,
-.blanckSquare {
+.blankSquare {
     font-size: 70px;
     line-height: 1.5;
     border: 3px solid #000;
@@ -42,4 +42,16 @@
     font-size: 2em;
     text-align: center;
     margin-right: 1em;
+}
+
+.letterContainer button {
+    padding: 10px 20px;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    outline: none; 
+}
+
+.letterContainer button:hover {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
