@@ -1,0 +1,23 @@
+.over h2 {
+    color: #ff9b08;
+    
+}
+
+.over span {
+    font-size: 1.5;
+    margin-bottom: 2em;
+}
+
+
+.over button {
+    padding: 10px 20px;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    outline: none; 
+   
+}
+
+.over button:hover{
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
